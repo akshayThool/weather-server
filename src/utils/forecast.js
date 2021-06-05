@@ -8,10 +8,11 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Not able to fetch the data', undefined);
         } else {
-            const { temperature, precip: rainChance } = body.current
+            const { temperature, precip: rainChance, weather_icons } = body.current
             callback(undefined, {
                 temperature,
-                rainChance
+                rainChance,
+                weatherIconUrl: weather_icons[0]
             });
         }
     });
