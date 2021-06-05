@@ -1,5 +1,3 @@
-console.log('Client Side Scripting');
-
 fetch('http://localhost:5000/weather?address=!').then((response) => {
     response.json().then((data) => {
         if (data.error) {
