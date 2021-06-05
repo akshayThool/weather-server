@@ -17,7 +17,7 @@ searchForm.addEventListener('submit', (e) => {
                 messageOne.textContent = data.error;
             } else {
                 messageOne.textContent = location;
-                messageTwo.textContent = 'The temperature is ' + data.temperature + ' and chance of rain is ' + data.rainChance;
+                messageTwo.textContent = 'The temperature is ' + data.temperature + ' and chance of rain is ' + data.rainChance + ' and the url to the image is ' + data.weatherIconUrl;
             }
         })
     });
