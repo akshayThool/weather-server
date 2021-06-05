@@ -1,0 +1,20 @@
+const request = require('request');
+
+const forecast = (latitude, longitude, callback) => {
+    const url = 'http://api.weatherstack.com/current?access_key=b767942a309e23f2f3073d167f54be42&query=' + latitude + ',' + longitude;
+    request({ url, json: true }, (error, { body }) => {
+        if (error) {
+            callback('Unable to connect to the internet', undefined);
+        } else if (body.error) {
+            callback('Not able to fetch the data', undefined);
+        } else {
+            const { temperature, precip: rainChance } = body.current
+            callback(undefined, {
+                temperature,
+                rainChance
+            });
+        }
+    });
+};
+
+module.exports = forecast;
