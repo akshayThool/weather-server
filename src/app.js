@@ -28,7 +28,8 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Us',
-        name: 'Akshay Thool'
+        name: 'Akshay Thool',
+        aboutMessage: 'This is me Akshay Thool. And I am going through NodeJs Course in Udemy to learn new things'
     });
 });
 
@@ -102,5 +103,5 @@ app.get('*', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log('The server is running on port' + port);
+    console.log('The server is running on port ' + port);
 })
